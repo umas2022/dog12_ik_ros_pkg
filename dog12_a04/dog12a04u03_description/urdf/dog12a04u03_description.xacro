@@ -1,0 +1,489 @@
+<robot name="dog12a04u03_description">
+
+  <link name="base">
+    <inertial>
+      <origin xyz="-3.1736E-05 -2.9783E-05 0.018563" rpy="0 0 0" />
+      <mass value="0.81565" />
+      <inertia ixx="0.00059343" ixy="6.3209E-08" ixz="4.5229E-07" iyy="0.0043539" iyz="-2.8021E-09" izz="0.0047495" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/base.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="LF_HIP">
+    <inertial>
+      <origin xyz="-0.0175 0.015568 -1.7347E-18" rpy="0 0 0" />
+      <mass value="0.043998" />
+      <inertia ixx="1.2087E-05" ixy="-1.786E-20" ixz="-4.1325E-24" iyy="6.2751E-06" iyz="-7.9099E-23" izz="1.3883E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/LF_HIP.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/LF_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LF_HAA" type="revolute">
+    <origin xyz="0.1525 0.015 0.026" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="LF_HIP" />
+    <axis xyz="1 0 0" />
+    <limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+  </joint>
+  <link name="LF_THIGH">
+    <inertial>
+      <origin xyz="0 -0.0175 -0.0525" rpy="0 0 0" />
+      <mass value="0.11124" />
+      <inertia ixx="0.0001562" ixy="4.903E-22" ixz="8.4372E-22" iyy="0.00015041" iyz="9.2995E-21" izz="1.6921E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/LF_THIGH.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/LF_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LF_HFE" type="revolute">
+    <origin xyz="-0.0175 0.079 0" rpy="0 0 0" />
+    <parent link="LF_HIP" />
+    <child link="LF_THIGH" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+  </joint>
+  <link name="LF_SHANK">
+    <inertial>
+      <origin xyz="-0.026472 -0.030068 -0.031077" rpy="0 0 0" />
+      <mass value="0.035221" />
+      <inertia ixx="3.0014E-05" ixy="-9.4679E-07" ixz="-2.7667E-06" iyy="2.9697E-05" iyz="-2.1152E-06" izz="5.7378E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/LF_SHANK.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/LF_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LF_KFE" type="revolute">
+    <origin xyz="0 0.003 -0.105" rpy="0 0 0" />
+    <parent link="LF_THIGH" />
+    <child link="LF_SHANK" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+  </joint>
+  <link name="LF_FOOT">
+    <inertial>
+      <origin xyz="0 0 -0.0085266" rpy="0 0 0" />
+      <mass value="0.0052561" />
+      <inertia ixx="2.5787E-07" ixy="1.5501E-22" ixz="1.9666E-22" iyy="2.5787E-07" iyz="-2.6506E-23" izz="2.4038E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/LF_FOOT.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/LF_FOOT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LF_FOOT_fixed" type="fixed">
+    <origin xyz="-0.029 -0.032 -0.082" rpy="0 0 0" />
+    <parent link="LF_SHANK" />
+    <child link="LF_FOOT" />
+    <axis xyz="0 0 0" />
+    <limit lower="0" upper="0" effort="0" velocity="0" />
+  </joint>
+  <link name="RF_HIP">
+    <inertial>
+      <origin xyz="-0.0175 -0.015568 -3.4694E-18" rpy="0 0 0" />
+      <mass value="0.043998" />
+      <inertia ixx="1.2087E-05" ixy="4.9519E-21" ixz="-2.9013E-22" iyy="6.2751E-06" iyz="9.6455E-22" izz="1.3883E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/RF_HIP.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/RF_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RF_HAA" type="revolute">
+    <origin xyz="0.1525 -0.015 0.026" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="RF_HIP" />
+    <axis xyz="-1 0 0" />
+    <limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+  </joint>
+  <link name="RF_THIGH">
+    <inertial>
+      <origin xyz="0 0.0175 -0.0525" rpy="0 0 0" />
+      <mass value="0.11124" />
+      <inertia ixx="0.0001562" ixy="9.7027E-21" ixz="-1.6874E-21" iyy="0.00015041" iyz="-2.13E-21" izz="1.6921E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/RF_THIGH.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/RF_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RF_HFE" type="revolute">
+    <origin xyz="-0.0175 -0.079 0" rpy="0 0 0" />
+    <parent link="RF_HIP" />
+    <child link="RF_THIGH" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+  </joint>
+  <link name="RF_SHANK">
+    <inertial>
+      <origin xyz="-0.026472 0.030068 -0.031077" rpy="0 0 0" />
+      <mass value="0.035221" />
+      <inertia ixx="3.0014E-05" ixy="9.4679E-07" ixz="-2.7667E-06" iyy="2.9697E-05" iyz="2.1152E-06" izz="5.7378E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/RF_SHANK.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/RF_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RF_KFE" type="revolute">
+    <origin xyz="0 -0.003 -0.105" rpy="0 0 0" />
+    <parent link="RF_THIGH" />
+    <child link="RF_SHANK" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+  </joint>
+  <link name="RF_FOOT">
+    <inertial>
+      <origin xyz="0 0 -0.0085266" rpy="0 0 0" />
+      <mass value="0.0052561" />
+      <inertia ixx="2.5787E-07" ixy="1.4349E-22" ixz="6.3879E-23" iyy="2.5787E-07" iyz="-4.5408E-23" izz="2.4038E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/RF_FOOT.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/RF_FOOT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RF_FOOT_fixed" type="fixed">
+    <origin xyz="-0.029 0.032 -0.082" rpy="0 0 0" />
+    <parent link="RF_SHANK" />
+    <child link="RF_FOOT" />
+    <axis xyz="0 0 0" />
+    <limit lower="0" upper="0" effort="0" velocity="0" />
+  </joint>
+  <link name="LH_HIP">
+    <inertial>
+      <origin xyz="0.0175 0.015568 -1.7347E-18" rpy="0 0 0" />
+      <mass value="0.043998" />
+      <inertia ixx="1.2087E-05" ixy="1.119E-21" ixz="-1.5187E-23" iyy="6.2751E-06" iyz="-8.9553E-23" izz="1.3883E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/LH_HIP.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/LH_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LH_HAA" type="revolute">
+    <origin xyz="-0.1525 0.015 0.026" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="LH_HIP" />
+    <axis xyz="1 0 0" />
+    <limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+  </joint>
+  <link name="LH_THIGH">
+    <inertial>
+      <origin xyz="-6.9389E-18 -0.0175 -0.0525" rpy="0 0 0" />
+      <mass value="0.11124" />
+      <inertia ixx="0.0001562" ixy="-5.6606E-21" ixz="3.7124E-20" iyy="0.00015041" iyz="-2.357E-20" izz="1.6921E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/LH_THIGH.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/LH_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LH_HFE" type="revolute">
+    <origin xyz="0.0175 0.079 0" rpy="0 0 0" />
+    <parent link="LH_HIP" />
+    <child link="LH_THIGH" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+  </joint>
+  <link name="LH_SHANK">
+    <inertial>
+      <origin xyz="0.026472 0.010932 -0.031077" rpy="0 0 0" />
+      <mass value="0.035221" />
+      <inertia ixx="3.0014E-05" ixy="9.4679E-07" ixz="2.7667E-06" iyy="2.9697E-05" iyz="-2.1152E-06" izz="5.7378E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/LH_SHANK.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/LH_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LH_KFE" type="revolute">
+    <origin xyz="0 -0.038 -0.105" rpy="0 0 0" />
+    <parent link="LH_THIGH" />
+    <child link="LH_SHANK" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+  </joint>
+  <link name="LH_FOOT">
+    <inertial>
+      <origin xyz="6.9389E-18 -1.3878E-17 -0.0085266" rpy="0 0 0" />
+      <mass value="0.0052561" />
+      <inertia ixx="2.5787E-07" ixy="-7.8288E-23" ixz="1.1979E-22" iyy="2.5787E-07" iyz="6.7417E-24" izz="2.4038E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/LH_FOOT.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/LH_FOOT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LH_FOOT_fixed" type="fixed">
+    <origin xyz="0.029 0.009 -0.082" rpy="0 0 0" />
+    <parent link="LH_SHANK" />
+    <child link="LH_FOOT" />
+    <axis xyz="0 0 0" />
+    <limit lower="0" upper="0" effort="0" velocity="0" />
+  </joint>
+  <link name="RH_HIP">
+    <inertial>
+      <origin xyz="0.0175 -0.015568 1.7347E-18" rpy="0 0 0" />
+      <mass value="0.043998" />
+      <inertia ixx="1.2087E-05" ixy="2.2832E-20" ixz="-8.6558E-23" iyy="6.2751E-06" iyz="1.9815E-22" izz="1.3883E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/RH_HIP.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/RH_HIP.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RH_HAA" type="revolute">
+    <origin xyz="-0.1525 -0.015 0.026" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="RH_HIP" />
+    <axis xyz="-1 0 0" />
+    <limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+  </joint>
+  <link name="RH_THIGH">
+    <inertial>
+      <origin xyz="-8.6736E-18 0.0175 -0.0525" rpy="0 0 0" />
+      <mass value="0.11124" />
+      <inertia ixx="0.0001562" ixy="-1.5383E-22" ixz="-4.2186E-22" iyy="0.00015041" iyz="1.7065E-20" izz="1.6921E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/RH_THIGH.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/RH_THIGH.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RH_HFE" type="revolute">
+    <origin xyz="0.0175 -0.079 0" rpy="0 0 0" />
+    <parent link="RH_HIP" />
+    <child link="RH_THIGH" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+  </joint>
+  <link name="RH_SHANK">
+    <inertial>
+      <origin xyz="0.026472 -0.010932 -0.031077" rpy="0 0 0" />
+      <mass value="0.035221" />
+      <inertia ixx="3.0014E-05" ixy="-9.4679E-07" ixz="2.7667E-06" iyy="2.9697E-05" iyz="2.1152E-06" izz="5.7378E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/RH_SHANK.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/RH_SHANK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RH_KFE" type="revolute">
+    <origin xyz="0 0.038 -0.105" rpy="0 0 0" />
+    <parent link="RH_THIGH" />
+    <child link="RH_SHANK" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+  </joint>
+  <link name="RH_FOOT">
+    <inertial>
+      <origin xyz="-2.7756E-17 0 -0.0085266" rpy="0 0 0" />
+      <mass value="0.0052561" />
+      <inertia ixx="2.5787E-07" ixy="-1.1991E-22" ixz="1.7935E-22" iyy="2.5787E-07" iyz="1.5738E-22" izz="2.4038E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/visual/RH_FOOT.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dog12a04u03_description/meshes/collision/RH_FOOT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RH_FOOT_fixed" type="fixed">
+    <origin xyz="0.029 -0.009 -0.082" rpy="0 0 0" />
+    <parent link="RH_SHANK" />
+    <child link="RH_FOOT" />
+    <axis xyz="0 0 0" />
+    <limit lower="0" upper="0" effort="0" velocity="0" />
+  </joint>
+</robot>
